@@ -1,0 +1,41 @@
+rpm -q mariadb
+
+rpm -q mariadb-server
+
+systemctl restart mariadb
+systemctl status mariadb
+
+mysql_secure_installation
+
+Enter Password:redhat
+y
+y
+y
+n
+y
+
+MySQL -u root -p
+
+create database student;
+use student;
+create table employee(id int(5) default null, name varchar(15) default null, day date default null, dept varchar(10) default null, status bool default null);
+show columns in employee;
+insert into employee(id,name,dept,day,status) values("205","xyz","itcs",now(),"1");
+select * from employee;
+exit
+
+mysqldump -u root -p student > /root/studentdataback.sql
+
+cat studentdataback.sql
+mysqldump -u root -p --databases student test > /root/studentdata.sql
+mysqldump -u root -p --all-database > /root/alldata.sql
+
+ls
+
+
+
+
+
+
+
+
